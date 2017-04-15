@@ -20,3 +20,8 @@ powerData$Date <- dmy(powerData$Date)
 ## Subsetting of the data for the dates in question
 powerDataFeb <- subset(powerData, Date > as.Date("2007-01-31") & Date < as.Date("2007-02-03"))
 
+## Make plot 2 (Global Active Power over time) using R Base Plotting
+png("plot2.png")
+plot(powerDataFeb$timeStamp, powerDataFeb$Global_active_power, ylab = "Global Active Power (kilowatts)", xlab = "", type = "n")
+lines(powerDataFeb$timeStamp, powerDataFeb$Global_active_power, type = "l")
+dev.off()

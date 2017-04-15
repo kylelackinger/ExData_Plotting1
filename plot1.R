@@ -20,3 +20,7 @@ powerData$Date <- dmy(powerData$Date)
 ## Subsetting of the data for the dates in question
 powerDataFeb <- subset(powerData, Date > as.Date("2007-01-31") & Date < as.Date("2007-02-03"))
 
+## Make plot 1 (Histogram of Global Active Power) using R Base Plotting
+png("plot1.png")
+hist(powerDataFeb$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+dev.off()
